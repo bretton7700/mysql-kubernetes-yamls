@@ -15,13 +15,18 @@ To successfully deploy a MySQL instance on Kubernetes, create a series of YAML f
 5. The Kubernetes Service.
 
 Step 1: Create Kubernetes Secret >> sql-secret.yaml
+
+#####
+Password Complexity
+The password is at least eight characters long. The password contains characters from three of the following four categories: Latin uppercase letters (A through Z) Latin lowercase letters (a through z)
+
 apiVersion: v1
 kind: Secret
 metadata:
   name: sql-secret
 type: kubernetes.io/basic-auth
 stringData:
-  password: nguru1234
+  password: nguru1234nguru
 
 ###
 kubectl create -f sql-secret.yaml
@@ -136,4 +141,4 @@ mysql -p
 kubectl delete deployment,svc sql
 kubectl delete pvc sql-pv-claim
 kubectl delete pv sql-pv-volume
-kubectl delete secret mysql-secret
+kubectl delete secret sql-secret
