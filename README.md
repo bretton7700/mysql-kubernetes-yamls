@@ -1,6 +1,11 @@
 # mysql-kubernetes-yamls
 This article will show you how to deploy a MySQL database instance on Kubernetes using persistent volumes. This feature enables stateful apps to overcome the inherent transience of the K8s pods.
 ### WHAT YOU NEED
+1.  Kubernetes cluster with kubectl installed
+To install kubectl check for your distro here 
+https://kubernetes.io/docs/tasks/tools/
+2. Administrative access to your system
+
 To successfully deploy a MySQL instance on Kubernetes, create a series of YAML files that you will use to define the following Kubernetes objects:
 
 1.  Kubernetes secret for storing the database password.
